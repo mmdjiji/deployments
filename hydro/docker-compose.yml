@@ -10,6 +10,7 @@ services:
     restart: always
     volumes:
       - ./data/mongo:/data/db
+      - ./data/mongo_config:/data/configdb
 
   oj-backend:
     image: mmdjiji/hydro_oj-backend:latest
