@@ -12,7 +12,7 @@ services:
       - ./data/mongo:/data/db
 
   oj-backend:
-    image: mmdjiji/hydro_oj-backend:latest
+    build: ./backend
     container_name: oj-backend
     restart: always
     depends_on:
@@ -24,7 +24,7 @@ services:
       - "0.0.0.0:80:8888" # In docker mode, change THIS port instead of port in system settings!
 
   oj-judge:
-    image: mmdjiji/hydro_oj-judge:latest
+    build: ./judge
     container_name: oj-judge
     restart: always
     privileged: true
